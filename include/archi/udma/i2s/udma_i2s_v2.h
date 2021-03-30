@@ -269,6 +269,7 @@
 #define UDMA_I2S_I2S_PDM_SETUP_PDM_EN_MASK                           0x80000000
 
 #define UDMA_I2S_I2S_DSP_SETUP_DSP_EN_BIT                            31
+#define UDMA_I2S_I2S_DSP_SETUP_DSP_OFFSET_BIT                        20
 #define UDMA_I2S_I2S_DSP_SETUP_DSP_MODE_BIT                          16
 #define UDMA_I2S_I2S_DSP_SETUP_DSP_SETUP_TIME_BIT                    0
 
