@@ -74,6 +74,9 @@
 //Configuration of DSP mode for slave
 #define UDMA_I2S_I2S_SLV_DSP_SETUP_OFFSET        0x30
 
+//Configuration of DSP mode for MASTER
+#define UDMA_I2S_I2S_MST_DSP_SETUP_OFFSET        0x34
+
 //
 // REGISTERS FIELDS
 //
@@ -273,6 +276,12 @@
 #define UDMA_I2S_I2S_SLV_DSP_SETUP_DSP_OFFSET_BIT                    20
 #define UDMA_I2S_I2S_SLV_DSP_SETUP_DSP_MODE_BIT                      16
 #define UDMA_I2S_I2S_SLV_DSP_SETUP_DSP_SETUP_TIME_BIT                0
+
+//DSP master setup
+#define UDMA_I2S_I2S_MST_DSP_SETUP_DSP_EN_BIT                        31
+#define UDMA_I2S_I2S_MST_DSP_SETUP_DSP_OFFSET_BIT                    20
+#define UDMA_I2S_I2S_MST_DSP_SETUP_DSP_MODE_BIT                      16
+#define UDMA_I2S_I2S_MST_DSP_SETUP_DSP_SETUP_TIME_BIT                0
 
 //
 // REGISTERS STRUCTS
@@ -608,9 +617,11 @@ static inline uint32_t udma_i2s_i2s_pdm_setup_get(uint32_t base) { return ARCHI_
 static inline void udma_i2s_i2s_pdm_setup_set(uint32_t base, uint32_t value) { ARCHI_WRITE(base, UDMA_I2S_I2S_PDM_SETUP_OFFSET, value); }
 
 //DSP functions
-static inline uint32_t udma_i2s_i2s_dsp_setup_get(uint32_t base) { return ARCHI_READ(base, UDMA_I2S_I2S_SLV_DSP_SETUP_OFFSET); }
-static inline void udma_i2s_i2s_dsp_setup_set(uint32_t base, uint32_t value) { ARCHI_WRITE(base, UDMA_I2S_I2S_SLV_DSP_SETUP_OFFSET, value); }
+static inline uint32_t udma_i2s_i2s_slv_dsp_setup_get(uint32_t base) { return ARCHI_READ(base, UDMA_I2S_I2S_SLV_DSP_SETUP_OFFSET); }
+static inline void udma_i2s_i2s_slv_dsp_setup_set(uint32_t base, uint32_t value) { ARCHI_WRITE(base, UDMA_I2S_I2S_SLV_DSP_SETUP_OFFSET, value); }
 
+static inline uint32_t udma_i2s_i2s_mst_dsp_setup_get(uint32_t base) { return ARCHI_READ(base, UDMA_I2S_I2S_MST_DSP_SETUP_OFFSET); }
+static inline void udma_i2s_i2s_mst_dsp_setup_set(uint32_t base, uint32_t value) { ARCHI_WRITE(base, UDMA_I2S_I2S_MST_DSP_SETUP_OFFSET, value); }
 
 #endif
 
